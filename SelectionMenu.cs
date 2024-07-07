@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentGradingSystem
 {
-    internal class SelectionMenu
+    internal static class SelectionMenu
     {
         static List<string> selectionMenu = new List<string>();
         static List<string> subjects = new List<string>();
@@ -14,8 +14,13 @@ namespace StudentGradingSystem
 
         private static void CreateSelections()
         {
+            selectionMenu.Clear();
+            subjects.Clear();
+            gradeComponents.Clear();
+            
             selectionMenu.Add("Add Grades");
             selectionMenu.Add("Display Grades Sheet");
+            selectionMenu.Add("End Session");
 
             gradeComponents.Add("Performance Tasks");
             gradeComponents.Add("Written Works");
@@ -26,11 +31,13 @@ namespace StudentGradingSystem
             subjects.Add("Science");
         }
 
-        public static void ShowSelection()
+        public static int ShowSelection()
         {
+            selectionMenu.Clear();
+
             CreateSelections();
 
-            string input = "";
+            int input = 3;
 
             Console.WriteLine("\nSelect action below:");
 
@@ -40,33 +47,32 @@ namespace StudentGradingSystem
             }
 
             Console.Write("Input selection: ");
-            input = Console.ReadLine();
+            input = Convert.ToInt16(Console.ReadLine());
 
             ProcessSelection(input);
+
+            return input;
         }
 
-        private static void ProcessSelection(string input)
+        private static void ProcessSelection(int input)
         {
-            switch (input)
+            if (input <= selectionMenu.Count)
             {
-                case "1":
-                    Grades.AddGrades();
-                    break;
-                case "2":
-                    Grades.DisplaySheet();
-                    break;
-                default:
-                    Console.WriteLine("Invalid input.");
-                    ProcessSelection(input);
-                    break;
+                
+            }
+            else
+            {
+                Console.WriteLine("Invalid input.");
+                selectionMenu.Clear();
+                ShowSelection();
             }
         }
 
-        public static void SelectSubject()
+        public static int SelectSubject()
         {
-            string input = "";
+            int input = 0;
 
-            Console.WriteLine("Select subject below: ");
+            Console.WriteLine("\nSelect subject below: ");
             
             for (int i = 0; i < subjects.Count; i++)
             {
@@ -74,29 +80,55 @@ namespace StudentGradingSystem
             }
 
             Console.Write("Input selection: ");
-            input = Console.ReadLine();
+            input = Convert.ToInt16(Console.ReadLine());
 
             ProcessSelectedSubject(input);
+
+            return input;
         }
 
-        private static void ProcessSelectedSubject(string input)
+        private static void ProcessSelectedSubject(int input)
         {
-            switch (input)
+            if (input <= subjects.Count)
             {
-                case "1":
-                    Console.WriteLine("ENGLISH");
-                    break; 
-                case "2":
-                    Console.WriteLine("MATHEMATICS");
-                    break;
-                case "3":
-                    Console.WriteLine("SCIENCE");
-                    break;
-                default:
-                    Console.WriteLine("Invalid input.");
-                    ProcessSelectedSubject(input);
-                    break;
+                Console.Write("");
+            }
+            else
+            {
+                Console.Write("Invalid input.");
+                SelectSubject();
+            }
+        }
 
+        public static int SelectGradeComponent()
+        {
+            int input = -1;
+
+            Console.WriteLine("\nSelect component below: ");
+
+            for (int i = 0; i < gradeComponents.Count; i++)
+            {
+                Console.WriteLine($"Select {i + 1} for {gradeComponents[i]}");
+            }
+
+            Console.Write("Input selection: ");
+            input = Convert.ToInt16(Console.ReadLine());
+
+            ProcessSelectedComponent(input);
+
+            return input;
+        }
+
+        private static void ProcessSelectedComponent(int input)
+        {
+            if (input <= gradeComponents.Count)
+            {
+                Console.Write("");
+            }
+            else
+            {
+                Console.Write("Invalid input.");
+                SelectSubject();
             }
         }
     }
