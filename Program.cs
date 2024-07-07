@@ -4,6 +4,7 @@
     {
         public static void Main()
         {
+            SelectionMenu.CreateSelections();
             Student.CreateStudents();
 
             StartBack();

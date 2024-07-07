@@ -11,6 +11,7 @@ namespace StudentGradingSystem
         static double[] engGrades = new double[10];
         static double[] matGrades = new double[10];
         static double[] sciGrades = new double[10];
+        
         public static void InputGrades()
         {
             string responseStudent = "", responseSubject = "";
@@ -31,17 +32,17 @@ namespace StudentGradingSystem
                         switch (subjectNum)
                         {
                             case 1:
-                                Console.Write("\nENGLISH");
+                                Console.WriteLine("\nENGLISH");
                                 engGrades[studentIndex] = ComputeGrade();
                                 Console.WriteLine($"English Grade: {Math.Round(engGrades[studentIndex], 2)}");
                                 break;
                             case 2:
-                                Console.Write("\nMATHEMATICS");
+                                Console.WriteLine("\nMATHEMATICS");
                                 matGrades[studentIndex] = ComputeGrade();
                                 Console.WriteLine($"Mathematics Grade: {Math.Round(matGrades[studentIndex], 2)}");
                                 break;
                             case 3:
-                                Console.Write("\nSCIENCE");
+                                Console.WriteLine("\nSCIENCE");
                                 sciGrades[studentIndex] = ComputeGrade();
                                 Console.WriteLine($"Science Grade: {Math.Round(sciGrades[studentIndex], 2)}");
                                 break;

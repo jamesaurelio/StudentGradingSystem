@@ -55,7 +55,7 @@ namespace StudentGradingSystem
             int studentIndex = -1;
             
             studentIndex = Array.IndexOf(studentNumbers, input);
-            Console.WriteLine($"Input grades for {studentNames[studentIndex]}");
+            Console.WriteLine($"\nInput grades for {studentNames[studentIndex]}");
 
             return (studentIndex);
         }

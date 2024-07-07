@@ -12,7 +12,7 @@ namespace StudentGradingSystem
         static List<string> subjects = new List<string>();
         static List<string> gradeComponents = new List<string>();
 
-        private static void CreateSelections()
+        public static void CreateSelections()
         {
             selectionMenu.Clear();
             subjects.Clear();
@@ -33,11 +33,7 @@ namespace StudentGradingSystem
 
         public static int ShowSelection()
         {
-            selectionMenu.Clear();
-
-            CreateSelections();
-
-            int input = 3;
+            int input = 0;
 
             Console.WriteLine("\nSelect action below:");
 
@@ -58,7 +54,7 @@ namespace StudentGradingSystem
         {
             if (input <= selectionMenu.Count)
             {
-                
+                Console.Write("");
             }
             else
             {
@@ -72,7 +68,7 @@ namespace StudentGradingSystem
         {
             int input = 0;
 
-            Console.WriteLine("\nSelect subject below: ");
+            Console.WriteLine("Select subject below: ");
             
             for (int i = 0; i < subjects.Count; i++)
             {
@@ -95,16 +91,16 @@ namespace StudentGradingSystem
             }
             else
             {
-                Console.Write("Invalid input.");
+                Console.Write("\nInvalid input.");
                 SelectSubject();
             }
         }
 
         public static int SelectGradeComponent()
         {
-            int input = -1;
+            int input = 0;
 
-            Console.WriteLine("\nSelect component below: ");
+            Console.WriteLine("Select component below: ");
 
             for (int i = 0; i < gradeComponents.Count; i++)
             {
@@ -127,7 +123,7 @@ namespace StudentGradingSystem
             }
             else
             {
-                Console.Write("Invalid input.");
+                Console.Write("\nInvalid input.");
                 SelectSubject();
             }
         }
