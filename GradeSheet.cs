@@ -40,7 +40,7 @@ namespace StudentGradingSystem
                                                 $"{Math.Round(sciGrades[i], 2)}", $"{Math.Round(averages[i], 2)}"));
             }
 
-            Console.Write("\nEnter to go back home.");
+            Console.Write("\nEnter to go back home. ");
             Console.ReadLine();
             Program.StartBack();
         }
