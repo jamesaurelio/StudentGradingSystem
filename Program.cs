@@ -16,7 +16,7 @@
         {
             Console.Clear();
             Console.WriteLine("STUDENT GRADING SYSTEM");
-            Console.WriteLine("Performance Task (PT) - 50%\nWritten Works(WW) - 30%\nQuarterly Exams(QE) - 20%");
+            Console.WriteLine("Performance Task (PT) - 50%\nWritten Works (WW) - 30%\nQuarterly Exams (QE) - 20%");
 
             int input = SelectionMenu.ShowSelection();
 

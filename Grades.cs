@@ -19,7 +19,7 @@ namespace StudentGradingSystem
             do
             {
                 Console.Write("Enter student number: ");
-                string input = Console.ReadLine();
+                string? input = Console.ReadLine();
                 int studentIndex = -1, subjectNum = 0;
 
                 if (Student.ValidateStudent(input))
