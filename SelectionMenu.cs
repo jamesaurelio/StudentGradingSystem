@@ -14,10 +14,6 @@ namespace StudentGradingSystem
 
         public static void CreateSelections()
         {
-            selectionMenu.Clear();
-            subjects.Clear();
-            gradeComponents.Clear();
-            
             selectionMenu.Add("Add Grades");
             selectionMenu.Add("Display Grades Sheet");
             selectionMenu.Add("End Session");
